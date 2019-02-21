@@ -96,11 +96,13 @@ window.onload = function() {
         book.loadTexture('bookcheck');
         book.isSigned = true;
         if (book1.isSigned && book2. isSigned && book3.isSigned) {
-            game.state.start(Win(game));
+            //game.state.start(Win(game));
+            var winText = game.add.text(300,120,'YOU WON!',{font:'50px Arial', fill:'#FFF'});
         }
     }
 
     function gameOver(player, tile) {
+        //gameOver state
         player.kill();
     }
     function mult(num) {
