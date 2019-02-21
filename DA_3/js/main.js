@@ -30,7 +30,7 @@ window.onload = function() {
     var player;
     var cursors;
     var books;
-    var book1, book2;
+    var book1, book2, book3;
 
     function create() {
         //map
@@ -39,13 +39,15 @@ window.onload = function() {
         layer = map.createLayer(0);
         layer.resizeWorld();
         map.setCollision(1);
+        map.setTileIndexCallback(2, gameOver, this);
         //layer.debug = true;
 
         //books
         books = game.add.group();
         books.enableBody = true;
-        book1 = books.create(96, 96, 'book');
-        book2 = books.create(200, 200, 'book');
+        book1 = books.create(32, mult(4), 'book');
+        book2 = books.create(mult(5), mult(16), 'book');
+        book3 = books.create(mult(26), mult(20), 'book');
 
         //player
         player = game.add.sprite(32, 32, 'player', 0);
@@ -59,28 +61,29 @@ window.onload = function() {
 
         //overlap with yearbooks
         game.physics.arcade.overlap(player, books, replaceBook);
+        //game.physics.overlap(player, Phaser.Tile(2), gameOver);
 
         //movement
         player.body.velocity.set(0);
 
         if (cursors.left.isDown && !cursors.right.isDown)
         {
-            player.body.velocity.x = -100;
+            player.body.velocity.x = -120;
             player.play('left');
         }
         if (cursors.right.isDown && !cursors.left.isDown)
         {
-            player.body.velocity.x = 100;
+            player.body.velocity.x = 120;
             player.play('right');
         }
         if (cursors.up.isDown && !cursors.down.isDown)
         {
-            player.body.velocity.y = -100;
+            player.body.velocity.y = -120;
             player.play('up');
         }
         if (cursors.down.isDown && !cursors.up.isDown)
         {
-            player.body.velocity.y = 100;
+            player.body.velocity.y = 120;
             player.play('down');
         }
             player.animations.stop();
@@ -88,5 +91,12 @@ window.onload = function() {
 
     function replaceBook(player, book) {
         book.loadTexture('bookcheck');
+    }
+
+    function gameOver(player, tile) {
+        player.kill();
+    }
+    function mult(num) {
+        return num * 32;
     }
 }
