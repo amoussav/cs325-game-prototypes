@@ -10,12 +10,13 @@ window.onload = function() {
     // loading functions to reflect where you are putting the assets.
     // All loading functions will typically all be found inside "preload()".
 
-
     var game = new Phaser.Game(800, 704, Phaser.AUTO, 'game', {
         preload: preload,
         create: create,
         update: update,
     });
+
+    game.state.add('Win', Win);
 
     function preload() {
         game.load.tilemap('map', 'assets/map.csv', null, Phaser.Tilemap.CSV);
@@ -48,6 +49,7 @@ window.onload = function() {
         book1 = books.create(32, mult(4), 'book');
         book2 = books.create(mult(5), mult(16), 'book');
         book3 = books.create(mult(26), mult(20), 'book');
+        books.setAll('isSigned', false);
 
         //player
         player = game.add.sprite(32, 32, 'player', 0);
@@ -92,6 +94,10 @@ window.onload = function() {
 
     function replaceBook(player, book) {
         book.loadTexture('bookcheck');
+        book.isSigned = true;
+        if (book1.isSigned && book2. isSigned && book3.isSigned) {
+            game.state.start(Win(game));
+        }
     }
 
     function gameOver(player, tile) {
