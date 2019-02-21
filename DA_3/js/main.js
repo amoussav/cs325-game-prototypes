@@ -53,6 +53,7 @@ window.onload = function() {
         player = game.add.sprite(32, 32, 'player', 0);
         game.physics.enable(player, Phaser.Physics.ARCADE);
         game.camera.follow(player);
+        player.body.setSize(23, 21, 4, 6);
         cursors = game.input.keyboard.createCursorKeys();
     }
 
