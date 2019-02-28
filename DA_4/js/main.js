@@ -203,9 +203,14 @@ window.onload = function() {
         player.kill();
     }
     function eat(bird, cactus) {
-        cactus.kill();
-        player2.health = 12;
-        healthText.setText("health: " + player2.health.toString());
+        if (cursors.down.isDown) {
+            cactus.kill();
+            player2.health = 12;
+            timer.stop();
+            timer.loop(1000, decHealth, this);
+            timer.start();
+            healthText.setText("health: " + player2.health.toString());
+        }
     }
     function decHealth() {
         player2.health -= 1;
