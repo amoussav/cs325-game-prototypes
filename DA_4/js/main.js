@@ -39,6 +39,7 @@ window.onload = function() {
     var cactus, cactus2, cactus3, cactus4, cactus5, cactus6;
     var healthText;
     var timer;
+    var birdVelocity;
 
     function create() {
         //music
@@ -99,6 +100,7 @@ window.onload = function() {
         player2.body.collideWorldBounds = true;
         player2.animations.add('left', [0, 1, 2, 3], 10, true);
         player2.animations.add('right', [5, 6, 7, 8], 10, true);
+        birdVelocity = 200;
 
         //cursor
         cursors = game.input.keyboard.createCursorKeys();
@@ -174,14 +176,14 @@ window.onload = function() {
         if (cursors.left.isDown && !cursors.right.isDown)
         {
             //  Move to the left
-            player2.body.velocity.x = -200;
+            player2.body.velocity.x = -1 * birdVelocity;
 
             player2.animations.play('left');
         }
         else if (cursors.right.isDown && !cursors.left.isDown)
         {
             //  Move to the right
-            player2.body.velocity.x = 200;
+            player2.body.velocity.x = birdVelocity;
 
             player2.animations.play('right');
         }
@@ -209,6 +211,7 @@ window.onload = function() {
             timer.stop();
             timer.loop(1000, decHealth, this);
             timer.start();
+            birdVelocity = 200;
             healthText.setText("health: " + player2.health.toString());
         }
     }
@@ -217,6 +220,9 @@ window.onload = function() {
         if (player2.health == 0) {
             player2.kill();
             timer.stop();
+        }
+        if (player2.health == 5) {
+            birdVelocity = 300;
         }
         healthText.setText("health: " + player2.health.toString());
     }
