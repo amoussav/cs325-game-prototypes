@@ -224,6 +224,9 @@ window.onload = function() {
         if (player2.health == 5) {
             birdVelocity = 300;
         }
+        if (player2.health == 2) {
+            birdVelocity = 350;
+        }
         healthText.setText("health: " + player2.health.toString());
     }
 }
