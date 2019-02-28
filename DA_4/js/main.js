@@ -144,14 +144,14 @@ window.onload = function() {
         if (wasd.left.isDown && !wasd.right.isDown)
         {
             //  Move to the left
-            player.body.velocity.x = -300;
+            player.body.velocity.x = -330;
 
             player.animations.play('left');
         }
         else if (wasd.right.isDown && !wasd.left.isDown)
         {
             //  Move to the right
-            player.body.velocity.x = 300;
+            player.body.velocity.x = 330;
 
             player.animations.play('right');
         }
