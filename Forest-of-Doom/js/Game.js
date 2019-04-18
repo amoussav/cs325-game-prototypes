@@ -38,6 +38,7 @@ GameStates.makeGame = function( game, shared ) {
             layer = map.createLayer(0);
             layer.resizeWorld();
             map.setCollision(1);
+            map.setTileIndexCallback(2, quitGame, this);
             //layer.debug = true;
 
             //player
