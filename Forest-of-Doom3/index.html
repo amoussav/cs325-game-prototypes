@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Phaser Basic Project Template</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Game.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Forest of Doom</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+This game is a classic maze game with an original horror twist.
+</li>
+
+<li><strong>Technical Merit:</strong>
+My game allows the player to toggle their weapon between flashlight and stick, using the stick to fight NPCs and the flashlight to increase visibility.
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+It was difficult to find a way to make the game "at night". The black image does not always follow the camera will, especially when the flashlight is off.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+<ul>
+<li>Main Menu Music: "Scary Demon Haunting" Adam Webb (<a href="http://soundbible.com/1883-Scary-Demon-Haunting.html">soundbible.com</a>).</li>
+	<li>Game Music: "Too Crazy" Fesliyan Studios (<a href="https://www.fesliyanstudios.com/royalty-free-music/downloads-c/scary-music/8">fesliyanstudios.com</a>).</li>
+	<a href="https://github.com/msikma/pokesprite/blob/master/icons/pokemon/shiny/jynx.png">sprite2.png</a>
+	<a href="https://bulbapedia.bulbagarden.net/wiki/File:Bag_Stick_Sprite.png">stick</a>
+	<a href="https://bulbapedia.bulbagarden.net/wiki/File:Bag_Light_Ball_Sprite.png">flashlight</a>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+<ul>
+<li>This game resembles the Scary Maze Game.</li>
+</ul>
+</li>
+
+<li><strong>High Concept:</strong>
+Escape from the Forest of Doom, overcoming enemies and darkness on the way.
+</li>
+
+<li><strong>Theme:</strong>
+Horror, escape.
+</li>
+
+<li><strong>Mandated Variety:</strong>
+NPC activity will vary based on player activity.
+</li>
+
+<li><strong>Prototype Goal:</strong>
+Movement, escape, limited view.
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+What experience do you want players to have when playing your game?
+</li>
+
+<li><strong>Gameplay:</strong>
+The player moves around in the dark, trying to escape the maze. The Q button toggles between the flashlight and the stick. The stick must be used to fight NPCs, but the flashlight provides an extended field of view. When the player finds their way out of the maze, they win.
+</li>
+
+<li><strong>Strategies:</strong>
+Have the flashlight out most of the time and only use the stick when you see enemies nearby. Try and remember where you are on the map so you don't get lost.
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+Part of the setting is the player does not know where they are. They are trapped in a dark, scary forest and must make it out. The forest is full of danger.
+</li>
+
+<li><strong>Target Audience:</strong>
+Gamers and horror fans.
+</li>
+
+<li><strong>Play Time:</strong>
+About 5 minutes.
+</li>
+
+</ul>
+</div>
+</body>
+</html>
